@@ -5,6 +5,8 @@ import os.path
 
 class National_parks_Tests(unittest.TestCase):
 
+
+
 	def setUp(self):
 		self.conn = sqlite3.connect("national_parks.sqlite") # Connecting to database that should exist
 		self.cur = self.conn.cursor()
@@ -48,6 +50,7 @@ class National_parks_Tests(unittest.TestCase):
 
     #Route 4
     def test_advice(self):
+		pass
         ###Not figure out how to test this route yet.
 
     def tearDown(self):
