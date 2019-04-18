@@ -30,7 +30,7 @@ class National_parks_Tests(unittest.TestCase):
 		self.assertEqual(data, state, "Testing a select state where Id = 1")
 
     #Route 1
-    def test_for_plot():
+    def test_for_plot(self):
         res = os.path.exists('static/state_plot.png')
         self.assertTrue(res)
 
@@ -38,8 +38,6 @@ class National_parks_Tests(unittest.TestCase):
     def test_num_of_parks(self):
         state = 'AL'
         self.assertEqual(state, 11)
-
-
 
     #Route 3
     def info_of_park(self):
@@ -51,7 +49,6 @@ class National_parks_Tests(unittest.TestCase):
     #Route 4
     def test_advice(self):
         ###Not figure out how to test this route yet.
-
 
     def tearDown(self):
 		self.conn.commit()
