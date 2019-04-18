@@ -29,8 +29,6 @@ class National_parks_Tests(unittest.TestCase):
 		data = self.cur.fetchone()
 		self.assertEqual(data, state, "Testing a select state where Id = 1")
 
-
-
     #Route 1
     def test_for_plot():
         res = os.path.exists('static/state_plot.png')
@@ -49,7 +47,7 @@ class National_parks_Tests(unittest.TestCase):
 		data = self.cur.fetchone()
 		self.assertEqual(data,('National Park', 'FL', 'FL'), "Testing data that results from selecting Park 1")
 
-        
+
     #Route 4
     def test_advice(self):
         ###Not figure out how to test this route yet.
