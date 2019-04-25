@@ -1,11 +1,12 @@
 # Final Project - Pengwei Cui
 
 
-My final project will build a Flask app using data about national parks. My Flask app will allow users to get some basic information about the national parks in America by inputting different data into a URL. The first route (a.k.a. home page) will show a graph of the number of national parks in each state. In anther route, data will be displayed via a HTML table to show all the states and the national parks in each state. The third route will allow users to search for a national park they would like to visit and get the basic information about that park. The last route will offer some advice and suggestions to the users. For example, users can type in the state and what kind of national parks they want to visit, then our app will return a list of national parks recommended for our users. Moreover, users can click the "Feeling Adventurous" button in this route. It will also display several "National parks" for our users.
+My final project built a Flask app using national parks data. My Flask app allows users to get some basic information about the national parks in America by interacting with my app. The first route (a.k.a. home page) will show a graph of the number of national parks in each state. In anther route, data will be displayed via a HTML table to show all the states and the national parks in each state. The third route will allow users to search for a national park they would like to visit and get the basic information about that park. The last route will offer some advice and suggestions to the users. For example, users can type in a kind of national parks they want to visit, then our app will return a list of national parks recommended for our users. Moreover, users can click the "Feeling Adventurous" button in this route. It will also display several "National parks" for our users.
 
 ## Repo directory structure
-~~~~
+
 The directory structure for your repo should look like this:
+~~~~
 ├── Database diagram.png
 ├── Populating_db.py
 ├── README.md
@@ -31,7 +32,7 @@ The directory structure for your repo should look like this:
 
 ## What did I do?
 
-1. Four main routes
+1. Four main routes.
 
 2. A database contain two tables and one association table(many to many relationship).
 
@@ -40,9 +41,9 @@ The directory structure for your repo should look like this:
    * Use of another new module "wtforms".
    * A many-to-many relationship in the database structure that is relied upon during interaction with the Flask application.
    * Two forms in the Flask application that allow a user to interact with the form and show data processed for a user to see.
-   * Templating in my Flask application.
-   * Links in the views of the Flask application page/s that allow a user to navigate the application and view all its routes.
-   * Relevant use of built-in libraries itertools.
+   * Templating in my Flask application for all routes
+   * Links in the views of the Flask application home page that allow a user to navigate the application and view all its routes.
+   * Relevant use of built-in libraries itertools: (Route 4: clicking the "Feeling adventurous" button and check it out)
    * Inclusion of JavaScript files in the application that affect the home page in my Flask application.
 
 
@@ -74,7 +75,7 @@ I designed all my flask application routes in this file. Those routes can access
 
 #### Route 1: http://localhost:5000/
 
-This is the home page and it will show a graph about the number of national parks in each state.
+This is the home page and it will show all the routes in our app and a graph about the number of national parks in each state.
 
 #### Route 2: http://localhost:5000/states
 
@@ -97,7 +98,7 @@ If you take a close look to my codes, you will find there are several additional
 * /advice_res: This route is used in route 4 to show the search results for advice.
 * /adventurous: This route is used to create National parks by using itertools, when our users click the "Feeling Adventurous" button in route 4.
 
-*Note that users should not visit those additional routes by typing in their URLs.*
+*Note that users should not visit those additional routes by typing in their URLs in the browser.*
 
 
 ## Unit tests - SI507project_tests.py
@@ -106,9 +107,11 @@ There are 8 tests in my test suite file.
 
 The first one is used to test my .csv file. Then, I designed four different tests to test my 4 routes. The following tests are used to test my National Park database.
 
+Use command "python SI507project_tests.py" to run me test suite file.
+
 ## templates
 
-There are several templates in the templates file. They are used to render HTML which will display in the browser.
+There are several templates in the templates file. They are used to render HTML which will display in the browser. All the routes use templates to display messages in this app.
 
 
 ## How to run my Flask application
@@ -131,19 +134,19 @@ There are several templates in the templates file. They are used to render HTML 
 
 5. Change the ULR to "http://localhost:5000/advice" or click the "National Parks Advisor" link in the home page.
 
-    You will go to the "National Parks Advisor" page, where users can search a kind of national parks they want to visit. Type in a park type and click on the "Search" button. If the type of parks are in our database, you can see a list of national parks. Otherwise, our page will display "No results found!".
+    You will go to the "National Parks Advisor" page, where users can search a kind of national parks they want to visit. Type in a certain type and click on the "Search" button. If the type of parks are in our database, you can see a list of national parks. Otherwise, our page will display "No results found!".
 
     You can type in types such as River, Historical, Monument or Preserve, etc.
 
-    Moreover, you can also click the "Feeling Adventurous" button. It will also display several "National parks" for our users.(These National parks' names are created by using itertools)
+    Moreover, you can click the "Feeling Adventurous" button. It will also display several "National parks" for our users.(These National parks' names are created by using itertools)
 
 
 
 ## How to deal with all the files in this project.
 
-*Note that I already created all the files you need to run my flask application, such as the national park database and the graph showed on the home page.* _emphasize_
+*Note that I already created all the files you need to run my flask application, such as the national park database and the graph showed on the home page.*
 
-If you want to go through all the work again. Please first delect the "national_parks.sqlite" database.
+If you want to go through all the work I did again. Please first delete the "national_parks.sqlite" database.
 
 1. First, cd to the place you saved our files, and then type at the command prompt: python Populating_db.py
 
@@ -151,17 +154,20 @@ If you want to go through all the work again. Please first delect the "national_
 
 2. Type at the command prompt:python SI507project_tools.py.
 
-    This command is used to run our flask application. Check out "How to run my Flask application" section.
+    This command is used to run our flask application. See "How to run my Flask application" section.
 
 3. If you want to try my test suite file, type at the command prompt: python SI507project_tests.py
 
 ## Use requirements.txt to set your virtual environment
 
-*Note that Since I use matplotlib to create the graph used in route 1, the matplotlib module can cause errors when used in a virtual environment. The official document recommend not to use virtual environment.*
+*Note that Since I use matplotlib to create the graph used in route 1, the matplotlib module can cause errors when used in a virtual environment. The official document recommends not to use virtual environment.*
 
 However, if you still want to run my final project in the virtual environment. Please comment the lines below. I already created the graph, so you don't have to create it again.
 
-line 2 :import matplotlib.pyplot as plt
+line 2 :
+~~~~
+import matplotlib.pyplot as plt
+~~~~
 
 line 88 to line 97:
 
@@ -179,7 +185,10 @@ def plot_parks():
     plt.savefig('./static/state_plot.jpeg')
 ~~~~
 
-line 202: plot_parks()
+line 202:
+~~~~
+plot_parks()
+~~~~
 
 Then, you can run my project in your virtual environment.
 
