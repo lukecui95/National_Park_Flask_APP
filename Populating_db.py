@@ -30,7 +30,7 @@ for state in states_abbr:
 
             else:
                 new_parks = National_parks(Name = df['Name'][j], Type = df['Type'][j], Location = df['Location'][j],
-                Description = df['Description'][j],Challenge_states = df['Challenge State'][j])
+                Description = df['Description'][j],Challenge_states = df['Challenge State'][j],Web_state = df['Web_state'][j])
 
                 new_parks.state.append(new_states)
             session.add(new_states)

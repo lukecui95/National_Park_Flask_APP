@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+thead {color:blue;}
+tbody {color:black;}
+
+
+</style>
+
+<body>
+
+<table border="5">
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>National Parks</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for item in parks %}
+    <tr>
+      <td>{{item[0]}}</td>
+      <td>{{item[1]}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+
+</body>
+</html>

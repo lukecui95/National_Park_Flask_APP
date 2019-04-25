@@ -1,0 +1,24 @@
+<doctype html>
+
+
+
+<html>
+
+  <body>
+    <h1>Recommendation for National Parks:</h1>
+    {% for result in results %}
+
+    <li>Name: {{ result[0] }}</li>
+    <li>Type: {{ result[1] }}</li>
+    <li>Location: {{ result[2] }}</li><br>
+
+
+    {% endfor %}
+
+
+
+<a href="{{ url_for('show_advice')}}">Return to the advice page</a>
+
+  </body>
+
+</html>
