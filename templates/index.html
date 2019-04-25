@@ -1,16 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Discussion</title>
+
+<script type="text/javascript">
+	// Much code here provided by Colleen Van Lent, edited by Jackie Cohen -- and soon yourself
+	// It is possible you have seen this before -- if so, that's fine, if not, that's fine, too
+	// Output..
+	// alert("hello");
+	alert(new Date());
+	console.log("hello in console");
+	function displayInformation () {
+		document.querySelector('h1').innerHTML = "National Parks Application - Pengwei Cui";
+		document.querySelector("#URL").innerHTML = document.documentURI; // URI means something like URL -- slight differences for specificity
+		document.querySelector('#time').innerHTML = new Date();
+		var body = document.querySelector('body')
+		body.style.background = "#C1DDF5";
+		// One place to find color option codes: https://www.w3schools.com/colors/colors_picker.asp
+		body.style.margin = "10%";
+	}
+	//When someone uses the keyboard shortcut to copy the words "University of Michigan" then add the words "Go Blue" to the final div.  Each occurence should be on a separate line.
+	//Note that this code must be outside the other function above
+
+	function handleClick(){
+		alert("hello");
+	}
+
+</script>
+<style>
+p{
+	background-color: #A5CCEF;
+	border: 3px solid #6FB7F6;
+	padding: 3%;
+	font-size: 1.1em;
+	line-height: 1.5;
+}
+</style>
+
+
 <html>
   <head>
 
   </head>
-  <body>
+  <body onload = "displayInformation();">
     <h1>National parks in each state:</h1>
 
 
-
+  <h3>Navigating my National Parks application:</h3>
   <a href=" ">Home Page</a ><br>
   <a href="/states">All National Parks</a ><br>
   <a href="/parks">Find a national park</a ><br>
   <a href="/advice">National Parks Advisor</a ><br>
+
+    <h3>Using JavaScript to display information on this dynamic page:</h3>
+    <p>
+      The URL of this page is: <span id = "URL"></span><br/>
+      This application is used to provide National Parks information to visitors.<br/>
+      The current date/time is: <span id = "time"></span><br/>
+    </p>
 
   <img src="{{url_for('static', filename='state_plot.jpeg',width=90, height=80, mode='crop', quality=95)}}" />
 
