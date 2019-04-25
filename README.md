@@ -4,6 +4,7 @@
 My final project will build a Flask app using data about national parks. My Flask app will allow users to get some basic information about the national parks in America by inputting different data into a URL. The first route (a.k.a. home page) will show a graph of the number of national parks in each state. In anther route, data will be displayed via a HTML table to show all the states and the national parks in each state. The third route will allow users to search for a national park they would like to visit and get the basic information about that park. The last route will offer some advice and suggestions to the users. For example, users can type in the state and what kind of national parks they want to visit, then our app will return a list of national parks recommended for our users. Moreover, users can click the "Feeling Adventurous" button in this route. It will also display several "National parks" for our users.
 
 ## Repo directory structure
+~~~~
 The directory structure for your repo should look like this:
 ├── Database diagram.png
 ├── Populating_db.py
@@ -26,6 +27,7 @@ The directory structure for your repo should look like this:
     ├── results.html
     ├── states.html
     └── surprise.html
+~~~~
 
 ## What did I do?
 
@@ -95,7 +97,7 @@ If you take a close look to my codes, you will find there are several additional
 * /advice_res: This route is used in route 4 to show the search results for advice.
 * /adventurous: This route is used to create National parks by using itertools, when our users click the "Feeling Adventurous" button in route 4.
 
-*Note that users should not visit those additional routes by typing in their URLs.* _emphasize_
+*Note that users should not visit those additional routes by typing in their URLs.*
 
 
 ## Unit tests - SI507project_tests.py
@@ -113,26 +115,27 @@ There are several templates in the templates file. They are used to render HTML 
 
 
 1. cd to the place you saved our files, and then type at the command prompt: python SI507project_tools.py
-2. Without doing anything else, in a web a browser, type in and check out this URL: "http://127.0.0.1:5000/"
-It will first display a pop-up window showing the date and time. Click OK and go to our home page. Under the "Navigating my National Parks application" title, you can click different links to access all the routes in our flask application. Moreover, there is a big graph below showing the number of national parks in each state.
+2. Without doing anything else, in a web a browser, type in and check out this URL: "http://127.0.0.1:5000/".
+
+    It will first display a pop-up window showing the date and time. Click OK and go to our home page. Under the "Navigating my National Parks application" title, you can click different links to access all the routes in our flask application. Moreover, there is a big graph below showing the number of national parks in each state.
 
 3. Change the ULR to "http://localhost:5000/states" or click the "All National Parks" link in the home page.
 
-You will go to a states page showing all the national parks in each state.
+    You will go to a states page showing all the national parks in each state.
 
 4. Change the ULR to "http://localhost:5000/parks" or click the "Find a national park" link in the home page.
 
-You will go to the "Find a national park" page, where you can search for the national park you are interested. Type in a national park name and click on the "Search" button. If this national park is in our database, you can see the basic information of this park. Otherwise, our page will display "No results found!".
+    You will go to the "Find a national park" page, where you can search for the national park you are interested. Type in a national park name and click on the "Search" button. If this national park is in our database, you can see the basic information of this park. Otherwise, our page will display "No results found!".
 
-You can type in National park names such as Yellowstone, Hot Springs or Everglades, etc.
+    You can type in National park names such as Yellowstone, Hot Springs or Everglades, etc.
 
 5. Change the ULR to "http://localhost:5000/advice" or click the "National Parks Advisor" link in the home page.
 
-You will go to the "National Parks Advisor" page, where users can search a kind of national parks they want to visit. Type in a park type and click on the "Search" button. If the type of parks are in our database, you can see a list of national parks. Otherwise, our page will display "No results found!".
+    You will go to the "National Parks Advisor" page, where users can search a kind of national parks they want to visit. Type in a park type and click on the "Search" button. If the type of parks are in our database, you can see a list of national parks. Otherwise, our page will display "No results found!".
 
-You can type in types such as River, Historical, Monument or Preserve, etc.
+    You can type in types such as River, Historical, Monument or Preserve, etc.
 
-Moreover, you can also click the "Feeling Adventurous" button. It will also display several "National parks" for our users.(These National parks' names are created by using itertools)
+    Moreover, you can also click the "Feeling Adventurous" button. It will also display several "National parks" for our users.(These National parks' names are created by using itertools)
 
 
 
@@ -144,24 +147,27 @@ If you want to go through all the work again. Please first delect the "national_
 
 1. First, cd to the place you saved our files, and then type at the command prompt: python Populating_db.py
 
-This command enables you to create the database used in our flask routes.
+    This command enables you to create the database used in our flask routes.
 
 2. Type at the command prompt:python SI507project_tools.py.
 
-This command is used to run our flask application. Check out "How to run my Flask application" section.
+    This command is used to run our flask application. Check out "How to run my Flask application" section.
 
 3. If you want to try my test suite file, type at the command prompt: python SI507project_tests.py
 
 ## Use requirements.txt to set your virtual environment
 
-Note: Since I use matplotlib to create the graph used in route 1, the matplotlib module can cause errors when used in a virtual environment. The official document recommend not to use virtual environment.
+*Note that Since I use matplotlib to create the graph used in route 1, the matplotlib module can cause errors when used in a virtual environment. The official document recommend not to use virtual environment.*
 
 However, if you still want to run my final project in the virtual environment. Please comment the lines below. I already created the graph, so you don't have to create it again.
 
 line 2 :import matplotlib.pyplot as plt
 
 line 88 to line 97:
+
+~~~~
 def plot_parks():
+
     df = pd.read_csv('national_parks.csv',encoding='latin-1')
     df_parks_state = df['Web_state'].value_counts().reset_index()
     df_parks_state.columns=['State','Num']
@@ -171,6 +177,7 @@ def plot_parks():
     plt.title('The number of National Parks in each state')
 
     plt.savefig('./static/state_plot.jpeg')
+~~~~
 
 line 202: plot_parks()
 
@@ -178,26 +185,26 @@ Then, you can run my project in your virtual environment.
 
 1) Create a virtual environment
 
-python3 -m venv finalproject-env
+    python3 -m venv finalproject-env
 
 2) Activate your virtual environment
 
-source finalproject-env/bin/activate    # For Mac/Linux...
+    source finalproject-env/bin/activate    # For Mac/Linux...
 
-source finalproject-env/Scripts/activate    # For Windows
+    source finalproject-env/Scripts/activate    # For Windows
 
 3) Install all requirements
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 
 4) Try our Flash app
 
-See "How to run our Flash app"
+    See "How to run our Flash app"
 
 5) Deactivate
 
-deactivate
+    deactivate
 
 
 ## National_Parks_database_plan
