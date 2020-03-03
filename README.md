@@ -1,7 +1,7 @@
-# Final Project - Pengwei Cui
+# My National Park Info App - A Flask App (With SQLAlchemy Database)
 
 
-My final project built a Flask app using national parks data. My Flask app allows users to get some basic information about the national parks in America by interacting with my app. The first route (a.k.a. home page) will show a graph of the number of national parks in each state. In anther route, data will be displayed via a HTML table to show all the states and the national parks in each state. The third route will allow users to search for a national park they would like to visit and get the basic information about that park. The last route will offer some advice and suggestions to the users. For example, users can type in a kind of national parks they want to visit, then our app will return a list of national parks recommended for our users. Moreover, users can click the "Feeling Adventurous" button in this route. It will also display several "National parks" for our users.
+I built a Flask app using national parks data. My Flask app allows users to get some basic information about the national parks in America by interacting with my app. The first route (a.k.a. home page) will show a graph of the number of national parks in each state. In anther route, data will be displayed via a HTML table to show all the states and the national parks in each state. The third route will allow users to search for a national park they would like to visit and get the basic information about that park. The last route will offer some advice and suggestions to the users. For example, users can type in a kind of national parks they want to visit, then our app will return a list of national parks recommended for our users. Moreover, users can click the "Feeling Adventurous" button in this route. It will also display several "National parks" for our users.
 
 ## Repo directory structure
 
